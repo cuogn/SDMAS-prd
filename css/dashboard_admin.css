@@ -164,6 +164,39 @@
   margin: 0;
   margin-right: 10px;
 }
+
+.bang-tin {
+  position: relative;
+}
+
+.button__add {
+  position: absolute;
+  right: 20px;
+  top: 52%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.button__add--csvc {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.btn-add {
+  border: none;
+  background-color: var(--quinary-color);
+  color: var(--tertiary-color);
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.btn-add:hover {
+  background-color: var(--secondary-color);
+  color: var(--quinary-color);
+}
+
 .search-bar input {
   border: none;
 }
@@ -213,34 +246,35 @@
   margin-left: 0;
   position: relative;
 }
-.forever-item {
-  margin: 20px;
-  width: 150px;
-  height: 100%;
-  margin-left: 0;
-  position: relative;
-}
-.news-item i {
+.news-item .fa-bookmark {
   position: absolute;
   color: #fff;
   left: 20%;
   top: 58%;
   font-size: 25px;
+}
+/* transform: translateX(100%); */
+.img-component {
+  position: relative;
+}
+.img-component .fa-bookmark {
+  position: absolute;
+  color: #fff;
+  left: 5px;
+  bottom: 0;
+  transform: translateY(50%);
+  font-size: 25px;
+}
+.news-item .fa-pencil {
+  position: absolute;
+  color: var(--quinary-color);
+  right: 20%;
+  top: 6px;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: var(--tertiary-color);
+  padding: 5px;
   /* transform: translateX(100%); */
-}
-.event-item i {
-  position: absolute;
-  color: #fff;
-  left: 20%;
-  top: 48%;
-  font-size: 25px;
-}
-.forever-item i {
-  position: absolute;
-  color: #fff;
-  left: 20%;
-  top: 48%;
-  font-size: 25px;
 }
 .news-item-content h6 {
   padding: 10px 0;
@@ -274,7 +308,8 @@
 .fa-bookmark.active {
   color: var(--secondary-color);
 }
-.end-event-item i {
+
+.end-event-item .fa-bookmark {
   position: absolute;
   left: 20%;
   top: 46%;
@@ -308,7 +343,9 @@
   gap: 20px;
   grid-template-areas:
     "row-1 row-2 row-3"
-    "row-4 row-4 row-5";
+    "row-4 row-4 row-5"
+    "row-6 row-6 row-6"
+    "row-7 row-7 row-7";
   padding: 20px;
   border-radius: 20px;
   background-color: var(--tertiary-color);
@@ -324,7 +361,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../assets/img/background_p3.png);
+  background-image: url(../static/assets/img/background_p3.png);
+
   z-index: -1;
   background-size: 180%;
   background-repeat: no-repeat;
@@ -337,7 +375,7 @@
   margin: 10px;
   font-size: 15px;
   font-weight: 700;
-  line-height: 3;
+  line-height: 2;
 }
 .row-1 {
   grid-area: row-1;
@@ -351,20 +389,43 @@
 .row-4 {
   width: 100%;
   grid-area: row-4;
+  line-height: 0;
 }
 .tao-danh-thiep {
   width: 100%;
   font-weight: 700;
 }
-.huy-danh-thiep {
+.quet-danh-thiep {
   width: 100%;
   font-weight: 700;
+}
+.admin-status {
+  width: 80%;
+  font-weight: 700;
+  background-color: var(--quaternary-color);
+}
+.tao-danh-thiep:hover,
+.quet-danh-thiep:hover,
+.admin-status:hover {
+  border: 1px solid var(--quinary-color);
 }
 .row-5 {
   grid-area: row-5;
   display: flex;
   align-items: center;
+  line-height: 0;
 }
+.row-6 {
+  grid-area: row-6;
+  line-height: 0;
+}
+.row-7 {
+  grid-area: row-7;
+  width: 100%;
+  align-items: center;
+  line-height: 0;
+}
+
 /* ===left=== */
 .content-left {
   font-weight: 600;
@@ -398,7 +459,7 @@
 .content-left .bottom {
   margin-left: 20px;
 }
-#xem-ki-thuat .container {
+#quan-ly-ki-thuat .container {
   margin: 70px 20px;
   margin-bottom: 0;
   /* flex-grow: 1; */
@@ -408,7 +469,7 @@
   overflow-x: hidden;
   z-index: 1;
 }
-#xem-ki-thuat .container::-webkit-scrollbar {
+#quan-ly-ki-thuat .container::-webkit-scrollbar {
   display: none;
 }
 .xem-tat-ca-ki-thuat {
@@ -436,7 +497,19 @@
 .ki-thuat-detail {
   width: 100%;
   height: 100%;
+  /* position: relative; */
+}
+.heading-ki-thuat .img-component {
   position: relative;
+}
+.heading-ki-thuat .fa-pencil {
+  position: absolute;
+  right: 93.5%;
+  top: 6px;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: var(--tertiary-color);
+  padding: 5px;
 }
 .heading-ki-thuat p {
   font-size: 20px;
@@ -449,7 +522,7 @@
   flex-direction: column;
   justify-content: start;
 }
-.ki-thuat-items i {
+.ki-thuat-items .fa-bookmark {
   position: absolute;
   color: #fff;
   left: 5px;
@@ -551,4 +624,13 @@
 .card-info p {
   margin: 0;
   color: #555;
+}
+#quan-ly-tai-chinh {
+  margin-top: 70px;
+}
+#quan-ly-thanh-vien .main-content {
+  margin-top: 30px;
+}
+#quan-ly-co-so-vat-chat {
+  margin-top: 72px;
 }
