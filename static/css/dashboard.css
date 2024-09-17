@@ -603,3 +603,8 @@
   margin: 0;
   color: #555;
 }
+.log-out-btn {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}

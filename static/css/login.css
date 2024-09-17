@@ -225,3 +225,8 @@ form a:hover {
   color: #000000;
   border: 1px solid black;
 }
+/* ===forgot password=== */
+#countdown {
+  color: #ff0000;
+  text-align: center;
+}

@@ -675,3 +675,8 @@
 #quan-ly-co-so-vat-chat {
   margin-top: 72px;
 }
+.log-out-btn {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
