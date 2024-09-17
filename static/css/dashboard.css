@@ -17,6 +17,57 @@
 *::after {
   box-sizing: border-box;
 }
+/* ===overlay=== */
+#content {
+  display: none;
+}
+
+.animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e3e3e1;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.martial-art-img {
+  width: 40%;
+  height: auto;
+  /* opacity: 0.1; */
+  transform: scale(1) translateY(0);
+  animation: punch 2s ease-out forwards;
+}
+@keyframes punch {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes shrinkGif {
+  0% {
+    transform: scale(1); /* Giữ nguyên kích thước ban đầu */
+  }
+
+  100% {
+    transform: translate(0, -350%) scale(1); /* Thu nhỏ về kích thước 0 */
+  }
+}
 .sidebar {
   height: 100vh;
   background-color: var(--tertiary-color);
@@ -383,7 +434,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: url(../static/assets/img/logo_clb.png);
+  background: url(../assets/img/logo_clb.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;

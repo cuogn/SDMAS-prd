@@ -24,21 +24,75 @@ body {
   background-color: var(--tertiary-color);
   font-family: Arial, sans-serif;
   height: auto;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
-  z-index: 1;
-  position: relative;
 }
 body::before {
   content: "";
-  background: url(../static/assets/img/logo-sdmas-Black.png);
+  background: url(../assets/img/logo-sdmas-Black.png);
   background-size: cover;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-  position: absolute;
   opacity: 0.5;
+}
+.hidden {
+  display: none;
+}
+#custom-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+  z-index: 1000;
+}
+
+.custom-alert-box {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.custom-alert-box button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.custom-alert-box button:hover {
+  background-color: #2980b9;
+}
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+#loading img {
+  width: 20%;
+  height: 20%;
 }
 h1 {
   font-size: 2rem;
@@ -116,19 +170,22 @@ form a:hover {
   align-items: center;
   list-style: none;
 }
-.navbar-nav .nav-link {
-  color: #ffffff;
+.nav-item .nav-link {
+  color: #fff !important;
   text-decoration: none;
   margin-right: 20px;
+  background-color: var(--quinary-color);
 }
+
 .nav-item a {
+  color: #fff;
   text-align: center;
   padding: 5px 20px;
   border-radius: 20px;
   background-color: var(--quinary-color);
 }
 .navbar-nav .nav-link:hover {
-  color: #000000;
+  color: #000000 !important;
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid black;

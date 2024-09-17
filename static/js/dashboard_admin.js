@@ -68,6 +68,16 @@ document.querySelectorAll(".fa-bookmark").forEach((bookmark) => {
     this.classList.toggle("active");
   });
 });
+
+window.onload = function () {
+  const overlay = document.querySelector(".animation-overlay");
+  const content = document.getElementById("dashboard_admin");
+  setTimeout(function () {
+    overlay.style.display = "none";
+    content.style.display = "block";
+  }, 2000);
+};
+
 // document.addEventListener("click", function (event) {
 //   const formTimKiem = document.getElementById("form-tim-kiem");
 //   const bangTin = document.getElementById("bang-tin");

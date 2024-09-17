@@ -13,9 +13,15 @@
     <link rel="stylesheet" href="../static/css/login.css" />
   </head>
   <body>
+    <div id="custom-alert" class="hidden">
+      <div class="custom-alert-box">
+        <p id="custom-alert-message"></p>
+        <button id="close-alert">OK</button>
+      </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container container-fluid">
-        <a href="../html/index.html" class="logo-link">
+        <a href="../static/html/index.html" class="logo-link">
           <img
             src="../static/assets/img/D3-logo-sdmas-Black.png"
             alt="logo"
@@ -39,7 +45,11 @@
               <a
                 class="nav-link"
                 href="#"
-                style="border: none; background-color: inherit; color: #000"
+                style="
+                  border: none;
+                  background-color: inherit;
+                  color: #000 !important;
+                "
                 >Võ thuật tự vệ</a
               >
             </li>
@@ -54,16 +64,19 @@
       </div>
     </nav>
     <div
-      class="container container-login text-center mt-3 d-flex flex-column justify-content-center align-items-center"
+      class="container container-login text-center d-flex flex-column justify-content-center align-items-center"
     >
       <h1 class="mb-3">Chào quý khách đến với Võ Thuật Tự Vệ</h1>
-      <p class="mb-5">Tham gia câu lạc bộ võ thuật SDMAS</p>
+      <p class="mb-3">Tham gia câu lạc bộ võ thuật SDMAS</p>
       <div class="d-flex justify-content-center">
         <form
-          class="bg-white p-4 px-5 rounded shadow"
+          class="bg-white p-4 px-5 rounded shadow d-flex flex-column"
           style="max-width: 400px; width: 100%"
         >
           <h2 class="mb-4" style="text-align: left">Đăng nhập:</h2>
+          <div id="loading" class="hidden">
+            <img src="../static/assets/img/loading-sdmas.gif" alt="loading" />
+          </div>
           <div class="mb-3">
             <input
               type="text"
@@ -82,26 +95,44 @@
               style="background-color: var(--tertiary-color)"
             />
           </div>
+          <div class="mb-3">
+            <select
+              name="roles"
+              id="roles"
+              style="
+                float: right;
+                background-color: var(--tertiary-color);
+                border: 1px solid #eff7f3;
+                border-radius: 20px;
+              "
+            >
+              <option value="admin">Quản trị viên</option>
+              <option value="member">Thành viên</option>
+              <option value="newbie">Người mới</option>
+            </select>
+          </div>
           <div class="d-flex justify-content-between align-items-center mb-3">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" id="rememberMe" />
               <label class="form-check-label" for="rememberMe">Ghi nhớ</label>
             </div>
             <a
-              href="../html/forgot-password.html"
+              href="../templates/forgot-password.html"
               class="text-decoration-none"
               style="color: var(--quaternary-color)"
               >Quên mật khẩu?</a
             >
           </div>
-          <button type="submit" class="btn btn-primary w-100">Xác nhận</button>
+          <button id="btn-login" type="submit" class="btn btn-primary w-100">
+            Xác nhận
+          </button>
           <div
             class="end-content d-flex justify-content-center flex-column mt-4"
           >
             <p class="login-content mt-3 fs-6">
               Chưa có tài khoản?
               <a
-                href="../html/guest-login.html"
+                href="../templates/guest-login.html"
                 class="text-decoration-none"
                 style="color: var(--quaternary-color)"
                 >Tiếp tục với khách!</a
@@ -116,5 +147,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="../static/js/login.js"></script>
   </body>
 </html>

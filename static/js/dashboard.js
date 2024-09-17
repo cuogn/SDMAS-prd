@@ -77,3 +77,12 @@ document.querySelectorAll(".fa-bookmark").forEach((bookmark) => {
 //     bangTin.style.display = "block";
 //   }
 // });
+window.onload = function () {
+  const overlay = document.querySelector(".animation-overlay");
+  const content = document.getElementById("content");
+
+  setTimeout(function () {
+    overlay.style.display = "none";
+    content.style.display = "block";
+  }, 3000);
+};
