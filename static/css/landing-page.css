@@ -698,3 +698,17 @@ footer {
   font-size: large;
   padding: 5px 10px;
 }
+.conten-ls {
+  overflow-y: auto;
+  max-height: 55vh;
+  max-width: 100%;
+}
+.conten-ls::-webkit-scrollbar {
+  display: none;
+}
+.conten-ls pre {
+  padding: 0 10px;
+  display: inline-block;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
